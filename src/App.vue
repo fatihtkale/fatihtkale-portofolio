@@ -3,18 +3,13 @@ import Navigation from './components/Navigation.vue';
 import TopBar from './components/TopBar.vue';
 import PWidget from './components/ProfileWidget.vue';
 import NWidget from './components/NoteWidget.vue'
-import { reactive } from 'vue';
-
-const windows = reactive({
-  profilewidget: true,
-});
 </script>
 
 <template>
-  <TopBar />
+  <TopBar class="z-[9999999]" />
   <div class="flex justify-between">
     <Transition name="bounce">
-      <PWidget @close="windows.profilewidget = false" v-if="windows.profilewidget" />
+      <PWidget />
     </Transition>
     <NWidget />
   </div>
@@ -31,6 +26,8 @@ const windows = reactive({
 body {
   background-image: url("https://uhdwallpapers.org/uploads/converted/20/06/25/macos-big-sur-wwdc-2560x1440_785884-mm-90.jpg");
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   height: 100%;
   font-family: "San Francisco";
