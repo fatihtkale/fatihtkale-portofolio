@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" width="250" height="250">
+	<title>Nyt Projekt</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 150px;fill: #327bc7;font-weight: 400;font-family: "DejaVuSans", "DejaVu Sans" } 
+	</style>
+	<g id="Mappe 1">
+		<text id="F" style="transform: matrix(1.635,0,0,1.635,81.164,241.425)" >
+			<tspan x="0" y="0" class="t0">F
+</tspan>
+		</text>
+		<text id="T" style="transform: matrix(1.635,0,0,1.635,42.35,187.46)" >
+			<tspan x="0" y="0" class="t0">T
+</tspan>
+		</text>
+	</g>
+</svg>

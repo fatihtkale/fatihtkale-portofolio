@@ -4,7 +4,7 @@ const emit = defineEmits(["close"]);
 
 <template>
     <vue-draggable-resizable class="!w-fit !h-auto" :resizable="false">
-        <div class="relative bg-[#53535352] border border-[rgba(255,255,255,0.18)] backdrop-blur-[13px] drop-shadow-md p-4 rounded-[16px] shadow-2xl z-10 flex items-end m-5 w-fit select-none">
+        <div class="absolute bg-[#53535352] border border-[rgba(255,255,255,0.18)] backdrop-blur-[13px] drop-shadow-md p-4 rounded-[16px] shadow-2xl z-10 flex items-end m-5 w-[745px] select-none">
             <div class="flex flex-col">
                 <div class="flex gap-5">
                     <img src="@/assets/fatih.jpg" class="w-64 h-64 rounded-[16px] border border-[#ffffff2e] drop-shadow-md bg-contain bg-no-repeat" alt="">

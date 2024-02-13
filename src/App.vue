@@ -3,17 +3,30 @@ import Navigation from './components/Navigation.vue';
 import TopBar from './components/TopBar.vue';
 import PWidget from './components/ProfileWidget.vue';
 import NWidget from './components/NoteWidget.vue'
+import Folder from './components/Folder.vue'
+import FolderPage from './components/FolderPage.vue';
+import { ref } from 'vue';
+import NotesPage from './components/NotesPage.vue';
+
+const folderWindow = ref(false)
+const noteWindow = ref(false)
 </script>
 
 <template>
   <TopBar class="z-[9999999]" />
-  <div class="flex justify-between">
+  <div class="relative justify-between w-full">
     <Transition name="bounce">
       <PWidget />
     </Transition>
     <NWidget />
+    <NotesPage v-if="noteWindow" @close="noteWindow = false" />
+    <FolderPage v-if="folderWindow" @close="folderWindow = false" />
+
+    <div class="absolute w-24 left-[17px] top-[350px]">
+      <Folder name="Projekter" canmove="true" @click="folderWindow = true" />
+    </div>
   </div>
-  <Navigation />
+  <Navigation @openNotepad="noteWindow = true" />
 </template>
 
 <style>
@@ -38,16 +51,20 @@ body {
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
+
 .bounce-leave-active {
   animation: bounce-in 0.5s reverse;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.25);
   }
+
   100% {
     transform: scale(1);
   }

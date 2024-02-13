@@ -1,33 +1,36 @@
 <template>
     <div class="flex flex-col items-center bg-zinc-700">
-        <footer class="fixed bg-[#53535352] border border-[#ffffff2e] backdrop-blur-[13px] drop-shadow-md bottom-2 p-4 mb-4 rounded-[16px] mx-auto w-auto shadow-2xl z-10 flex items-end" :style="{ height: '80px' }" @mousemove="updatePosition" @mouseleave="resetPosition">
-            <div class="flex items-end gap-x-4" :style="{ height: '96px' }">
-                <button ref="buttonA" class="rounded-xl bg-green-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonA), height: computedSize(buttonA) }">A</button>
-                <button ref="buttonB" class="rounded-xl bg-yellow-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonB), height: computedSize(buttonB) }">B</button>
-                <button ref="buttonC" class="rounded-xl bg-red-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonC), height: computedSize(buttonC) }">C</button>
-                <button ref="buttonD" class="rounded-xl bg-purple-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonD), height: computedSize(buttonD) }">D</button>
-                <button ref="buttonE" class="rounded-xl bg-indigo-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonE), height: computedSize(buttonE) }">E</button>
-                <button ref="buttonF" class="rounded-xl bg-pink-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonF), height: computedSize(buttonF) }">F</button>
-                <button ref="buttonG" class="rounded-xl bg-red-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonG), height: computedSize(buttonG) }">G</button>
-                <button ref="buttonH" class="rounded-xl bg-green-500 text-white text-2xl font-bold" :style="{ width: computedSize(buttonH), height: computedSize(buttonH) }">H</button>
+        <footer class="fixed bg-[#53535352] border border-[#ffffff2e] backdrop-blur-[13px] drop-shadow-md bottom-2 p-4 mb-4 rounded-[16px] mx-auto w-auto shadow-2xl z-10 flex items-end" :style="{ height: '95px' }" @mousemove="updatePosition" @mouseleave="resetPosition">
+            <div class="flex items-end gap-x-4" :style="{ height: '100px' }">
+                <div ref="buttonA" class="rounded-xl w-full h-full cursor-pointer" :style="{ width: computedSize(buttonA), height: computedSize(buttonA) }">
+                    <img src="@/assets/finder.png" class="h-full w-full" alt="">
+                </div>
+                <a href="https://github.com/fatihtkale" target="_blank" ref="buttonB" class="rounded-xl w-full h-full cursor-pointer" :style="{ width: computedSize(buttonB), height: computedSize(buttonB) }">
+                    <img src="@/assets/github.png" class="h-full w-full" alt="">
+                </a>
+                <div @click="emit('openNotepad')" ref="buttonC" class="rounded-xl w-full h-full cursor-pointer" :style="{ width: computedSize(buttonC), height: computedSize(buttonC) }">
+                    <img src="@/assets/notes.png" class="h-full w-full" alt="">
+                </div>
             </div>
         </footer>
     </div>
 </template>
-  
+
 <script lang="ts" setup>
 import { ref } from 'vue';
+
+const emit = defineEmits(['openNotepad']);
 
 const x = ref(10000);
 const y = ref(10000);
 const buttonA = ref(null);
 const buttonB = ref(null);
 const buttonC = ref(null);
-const buttonD = ref(null);
-const buttonE = ref(null);
-const buttonF = ref(null);
-const buttonG = ref(null);
-const buttonH = ref(null);
+// const buttonD = ref(null);
+// const buttonE = ref(null);
+// const buttonF = ref(null);
+// const buttonG = ref(null);
+// const buttonH = ref(null);
 
 const updatePosition = (event: MouseEvent) => {
     x.value = event.clientX;
@@ -47,8 +50,8 @@ const scalefactor = (el: any) => {
         let dist = Math.sqrt(dx ** 2 + dy ** 2);
         return Math.min(Math.max(1.0, (2.0 - (dist - 30) / 110)), 2.0);
     }
-    return 1.0; // Default scale factor
+    return 1.0;
 };
 
-const computedSize = (el: any) => `${Math.round(48 * scalefactor(el))}px`;
+const computedSize = (el: any) => `${Math.round(64 * scalefactor(el))}px`;
 </script>
