@@ -25,7 +25,6 @@ const close = () => {
                         <a href="https://define-professional.dk/" target="_blank">
                             <Folder :canmove="false" name="define-professional" />
                         </a>
-                        <Folder :canmove="false" name="define-waters" />
                         <a href="https://github.com/fatihtkale/ApexSharp" target="_blank">
                             <Folder :canmove="false" name="apex-sharp" />
                         </a>
@@ -40,6 +39,12 @@ const close = () => {
                         </a>
                         <a href="https://drive.google.com/drive/folders/1Ow9fhZipIDWrmrPXwP-rkLvmtfaHa5R4?usp=sharing" target="_blank">
                             <Folder :canmove="false" name="find-frisor-app" />
+                        </a>
+                        <a href="https://fuluflow.com/" target="_blank">
+                            <Folder :canmove="false" name="fuluflow.com" />
+                        </a>
+                        <a href="http://api-cvr.dk/" target="_blank">
+                            <Folder :canmove="false" name="api-cvr.dk" />
                         </a>
                     </div>
                 </div>
