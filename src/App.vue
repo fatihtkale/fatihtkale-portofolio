@@ -37,7 +37,7 @@ const noteWindow = ref(false)
 }
 
 body {
-  background-image: url("https://uhdwallpapers.org/uploads/converted/20/06/25/macos-big-sur-wwdc-2560x1440_785884-mm-90.jpg");
+  background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/1455.jpg");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
